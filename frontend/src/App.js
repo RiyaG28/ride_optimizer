@@ -1,14 +1,24 @@
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Register from './components/Registration';
-import RideRequest from './components/RideRequest';
+import CreateRide from './components/CreateRide';
+import { AppBar, Toolbar, Typography } from '@mui/material';
+import ButtonAppBar from './components/ButtonAppbar';
+import PathOptimiser from './components/PathOptimiser';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Register />
-      <RideRequest />
-    </div>
+    <Router>
+      <div>
+        <ButtonAppBar position="static" />
+        <Routes>
+          <Route path="/" element={<PathOptimiser />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/create-ride" element={<CreateRide />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;

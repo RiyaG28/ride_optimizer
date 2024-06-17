@@ -15,6 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/rides")
+@CrossOrigin(origins= "http://localhost:3000")
 public class RideController {
 
     @Autowired
